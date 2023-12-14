@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <head>
+    <title>Registro</title>
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+    <script src="../js/registro.js"></script>
+    <link rel="stylesheet" type="text/css" href="sreg.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Registro</h1>
+    <form id="signup-form" onsubmit="return validateForm()" method="POST">
+      <label for="nombre">Nombre:</label><br>
+      <input type="text" id="nombre" name="nombre" required><br>
+
+      <label for="correo">Correo electrónico:</label><br>
+      <input type="email" id="correo" name="correo" required><br>
+
+      <label for="edad">Edad:</label><br>
+      <input type="number" id="edad" name="edad" required><br>
+
+      <label for="telmovil">Telefono Movil:</label><br>
+      <input type="tel" id="telmovil" name="telmovil" required><br>
+
+      <label for="genero">Genero:</label><br>
+      <select name="genero">
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+      </select>
+
+      <label for="provincia">Provincia:</label><br>
+      <select name="provincia">
+        <option value="Bocas del Toro">Bocas del Toro</option>
+        <option value="Chiriquí">Chiriquí</option>
+        <option value="Coclé">Coclé</option>
+        <option value="Colón">Colón</option>
+        <option value="Darién">Darién</option>
+        <option value="Emberá">Emberá</option>
+        <option value="Guna Yala">Guna Yala</option>
+        <option value="Herrera">Herrera</option>
+        <option value="Los Santos">Los Santos</option>
+        <option value="Ngäbe-Buglé">Ngäbe-Buglé</option>
+        <option value="Panamá">Panamá</option>
+        <option value="Panamá Oeste">Panamá Oeste</option>
+        <option value="Veraguas">Veraguas</option>
+      </select>
+
+      <label for="contrasena">Contraseña:</label><br>
+      <input type="password" id="contrasena" name="contrasena" required><br>
+
+      <label for="confirmar-contrasena">Confirmar contraseña:</label><br>
+      <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" required><br>
+
+      <div class="h-captcha" data-sitekey="9b0512d6-d226-4113-9ffc-e7ee43b548f8"></div>
+
+      <button id="enviar" type="submit">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>
+
+

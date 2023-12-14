@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Productos</title>
+</head>
+<body>
+    <h1>Lista de Productos</h1>
+    <ul id="lista-productos"></ul>
+
+    <script>
+        // JavaScript para obtener y mostrar los productos
+        fetch('http://localhost:3000/productos')
+            .then(response => response.json())
+            .then(data => {
+                const listaProductos = document.getElementById('lista-productos');
+
+                data.forEach(producto => {
+                    const elemento = document.createElement('li');
+                    elemento.innerHTML = `
+                        <strong>${producto.nombre}</strong>
+                        <br>
+                        Descripción: ${producto.descripcion}
+                        <br>
+                        Precio: $${producto.precio}
+                        <br>
+                        Cantidad en stock: ${producto.cantidad_stock}
+                        <br>
+                        Likes: ${producto.cantidad_likes}
+                        <br>
+                        <button>Me gusta</button>
+                        <hr>
+                    `;
+                    listaProductos.appendChild(elemento);
+                });
+            })
+            .catch(error => console.error('Error al obtener datos:', error));
+    </script>
+</body>
+</html>
